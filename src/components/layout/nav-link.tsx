@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type ReactNode } from "react";
+import { m } from "motion/react";
 
 interface NavLinkProps {
   href: string;
@@ -31,7 +32,7 @@ export function NavLink({ href, children, className, onClick }: NavLinkProps) {
   const isActive = isHashLink
     ? pathname === targetPath && currentHash === `#${targetHash}`
     : href === "/"
-      ? pathname === "/"
+      ? pathname === "/" && !currentHash
       : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
@@ -39,15 +40,17 @@ export function NavLink({ href, children, className, onClick }: NavLinkProps) {
       href={href}
       prefetch
       onClick={onClick}
-      className={`relative isolate inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors duration-150 ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"} ${className ?? ""}`}
+      className={`relative isolate inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors duration-200 ${isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"} ${className ?? ""}`}
     >
+      <span className="relative z-10">{children}</span>
       {isActive && (
-        <span
-          className="absolute inset-0 -z-10 rounded-md bg-primary/10 ring-1 ring-primary/15"
+        <m.span
+          layoutId="portfolio-nav-underline"
+          className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full bg-primary"
+          transition={{ type: "spring", stiffness: 420, damping: 32 }}
           aria-hidden="true"
         />
       )}
-      <span className="relative z-10">{children}</span>
     </Link>
   );
 }
