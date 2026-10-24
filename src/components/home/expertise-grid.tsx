@@ -25,6 +25,7 @@ const expertise = [
 
 export function ExpertiseGrid() {
   return (
+    <div id="skills" className="scroll-mt-24">
     <SectionContainer>
       <SectionHeading
         title="Core Expertise"
@@ -66,5 +67,6 @@ export function ExpertiseGrid() {
         ))}
       </div>
     </SectionContainer>
+    </div>
   );
 }
