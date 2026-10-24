@@ -2,11 +2,11 @@
 
 > My personal corner on the web.
 
-A modern, interactive portfolio showcasing my journey as a software developer, the projects I build, and the technologies I work with.
+A modern, interactive portfolio showcasing my work, skills, and journey as a software developer.
 
-### ↗ Explore
+### ↗ Live Website
 
-**[Visit Live Portfolio](YOUR_LIVE_URL)**
+**[Visit Sonia Portfolio](https://sonia-portfolio-dusky.vercel.app/)**
 
 ### ⚡ Built With
 
@@ -14,11 +14,10 @@ A modern, interactive portfolio showcasing my journey as a software developer, t
 
 ### ✦ Features
 
-- Minimal, responsive portfolio design
-- Smooth navigation and interactive UI
-- Dedicated sections for projects, skills, and coding profiles
-- Animated 3D assistant concept
-- Responsive layout for desktop and mobile
+- Responsive portfolio layout
+- Sections for skills, experience, and projects
+- Coding profile links
+- Interactive UI and animated assistant concept
 
 ### 🖥️ Run Locally
 
@@ -29,12 +28,14 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:3000` in your browser.
+Open http://localhost:3000 in your browser.
 
 ---
 
 <div align="center">
 
 Designed & built by **Sonia Gupta** · 2026
+
+[Live Portfolio](https://sonia-portfolio-dusky.vercel.app/) · [GitHub Repository](https://github.com/sonia071202/Sonia_portfolio)
 
 </div>
