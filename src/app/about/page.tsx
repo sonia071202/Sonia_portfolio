@@ -56,15 +56,13 @@ export default function AboutPage() {
           <SectionHeading title="Skills" description="Technologies and concepts I use to build practical software." />
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {skills.map((category, i) => (
-            <ScrollReveal key={category.category} delay={i * 0.05}>
-              <div className="bento-card rounded-xl p-6 h-full">
-                <h3 className="font-semibold text-sm">{category.category}</h3>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {category.skills.map((skill) => <Badge key={skill} variant="secondary" className="text-xs">{skill}</Badge>)}
-                </div>
+          {skills.map((category) => (
+            <div key={category.category} className="bento-card rounded-xl p-6 h-full">
+              <h3 className="font-semibold text-sm">{category.category}</h3>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {category.skills.map((skill) => <Badge key={skill} variant="secondary" className="text-xs">{skill}</Badge>)}
               </div>
-            </ScrollReveal>
+            </div>
           ))}
         </div>
       </SectionContainer>
