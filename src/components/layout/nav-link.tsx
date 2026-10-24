@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 interface NavLinkProps {
   href: string;
@@ -13,7 +13,26 @@ interface NavLinkProps {
 
 export function NavLink({ href, children, className, onClick }: NavLinkProps) {
   const pathname = usePathname();
-  const isActive = href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const [currentHash, setCurrentHash] = useState("");
+
+  useEffect(() => {
+    const syncHash = () => setCurrentHash(window.location.hash);
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    window.addEventListener("popstate", syncHash);
+    return () => {
+      window.removeEventListener("hashchange", syncHash);
+      window.removeEventListener("popstate", syncHash);
+    };
+  }, [pathname]);
+
+  const [targetPath, targetHash] = href.split("#");
+  const isHashLink = Boolean(targetHash);
+  const isActive = isHashLink
+    ? pathname === targetPath && currentHash === `#${targetHash}`
+    : href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <Link
