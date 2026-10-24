@@ -162,23 +162,23 @@ I&apos;m an MCA graduate passionate about{" "}
             </m.div>
           </div>
 
-          {/* Right - architecture diagram */}
+          {/* Right - architecture diagram (visible on mobile and desktop) */}
           <m.div
-            initial={{ opacity: 0, scale: 0.85, x: 40 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:block"
+            initial={{ opacity: 0, scale: 0.92, y: 18 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="mx-auto w-full max-w-[360px] lg:max-w-none"
           >
             <div className="relative">
-              <div className="absolute -inset-8 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-ring/10 blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-              <div className="relative rounded-2xl border border-border/40 bg-card/20 backdrop-blur-2xl p-6 shadow-2xl glass-panel gradient-border">
-                <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/30">
+              <div className="absolute -inset-4 sm:-inset-8 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-ring/10 blur-2xl sm:blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+              <div className="relative rounded-2xl border border-border/40 bg-card/20 backdrop-blur-xl p-3 sm:p-6 shadow-2xl glass-panel gradient-border">
+                <div className="flex items-center gap-2 mb-2 sm:mb-4 pb-2 sm:pb-3 border-b border-border/30">
                   <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400/80" />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-red-400/80" />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-400/80" />
+                    <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-green-400/80" />
                   </div>
-                  <span className="text-[10px] font-mono text-muted-foreground ml-2">system.architecture</span>
+                  <span className="text-[9px] sm:text-[10px] font-mono text-muted-foreground ml-2">system.architecture</span>
                 </div>
                 <ArchitectureVisual />
               </div>
